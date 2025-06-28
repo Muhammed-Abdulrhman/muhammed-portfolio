@@ -196,6 +196,56 @@ section h2::after {
     transform: translateX(10px);
 }
 
+/* Projects Section */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.project-card {
+    background-color: #16213e;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card h3 {
+    font-size: 1.8rem;
+    color: #e94560;
+    margin-bottom: 15px;
+}
+
+.project-card p {
+    font-size: 1.1rem;
+    color: #c0c0c0;
+    margin-bottom: 20px;
+}
+
+.project-card .project-link {
+    display: inline-block;
+    background-color: #e94560;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.project-card .project-link:hover {
+    background-color: #c0392b;
+    transform: translateY(-5px);
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 15px rgba(233, 69, 96, 0.5);
+}
+
 /* Contact Section */
 .contact p {
     text-align: center;
@@ -264,7 +314,7 @@ footer {
         padding: 8px 15px;
     }
 
-    .skills-grid {
+    .skills-grid, .projects-grid {
         grid-template-columns: 1fr;
     }
 
@@ -304,20 +354,19 @@ footer {
         padding: 8px 12px;
     }
 
-    .skill-category h3 {
+    .skill-category h3, .project-card h3 {
         font-size: 1.5rem;
     }
 
-    .skill-category ul li {
+    .skill-category ul li, .project-card p {
         font-size: 1rem;
     }
 
-    .contact-links a {
+    .contact-links a, .project-card .project-link {
         font-size: 1rem;
         padding: 10px 20px;
     }
 }
-
 
 /* Particle Animation */
 .particle {
@@ -348,24 +397,24 @@ footer {
 }
 
 /* Scroll Animation Classes */
-.skill-category, .about-me, .contact {
+.skill-category, .about-me, .contact, .project-card {
     opacity: 0;
     transform: translateY(50px);
     transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
-.skill-category.animate, .about-me.animate, .contact.animate {
+.skill-category.animate, .about-me.animate, .contact.animate, .project-card.animate {
     opacity: 1;
     transform: translateY(0);
 }
 
 /* Enhanced Hover Effects */
-.skill-category ul li {
+.skill-category ul li, .project-card {
     position: relative;
     overflow: hidden;
 }
 
-.skill-category ul li::before {
+.skill-category ul li::before, .project-card::before {
     content: '';
     position: absolute;
     top: 0;
@@ -376,7 +425,7 @@ footer {
     transition: left 0.5s;
 }
 
-.skill-category ul li:hover::before {
+.skill-category ul li:hover::before, .project-card:hover::before {
     left: 100%;
 }
 
@@ -395,12 +444,12 @@ footer {
 }
 
 /* Enhanced Button Animations */
-.social-links a, .contact-links a {
+.social-links a, .contact-links a, .project-link {
     position: relative;
     overflow: hidden;
 }
 
-.social-links a::before, .contact-links a::before {
+.social-links a::before, .contact-links a::before, .project-link::before {
     content: '';
     position: absolute;
     top: 0;
@@ -411,7 +460,7 @@ footer {
     transition: left 0.6s;
 }
 
-.social-links a:hover::before, .contact-links a:hover::before {
+.social-links a:hover::before, .contact-links a:hover::before, .project-link:hover::before {
     left: 100%;
 }
 
@@ -456,8 +505,8 @@ nav ul li a.active {
     border-bottom: 2px solid #e94560;
 }
 
-/* Loading Animation for Skills */
-.skill-category ul li {
+/* Loading Animation for Skills and Projects */
+.skill-category ul li, .project-card {
     animation: slideInLeft 0.6s ease forwards;
     animation-delay: calc(var(--i) * 0.1s);
     opacity: 0;
@@ -480,4 +529,14 @@ nav ul li a.active {
 .skill-category:nth-child(1) ul li:nth-child(3) { --i: 3; }
 .skill-category:nth-child(2) ul li:nth-child(1) { --i: 4; }
 .skill-category:nth-child(2) ul li:nth-child(2) { --i: 5; }
-
+.skill-category:nth-child(2) ul li:nth-child(3) { --i: 6; }
+.skill-category:nth-child(3) ul li:nth-child(1) { --i: 7; }
+.skill-category:nth-child(3) ul li:nth-child(2) { --i: 8; }
+.skill-category:nth-child(3) ul li:nth-child(3) { --i: 9; }
+.skill-category:nth-child(3) ul li:nth-child(4) { --i: 10; }
+.skill-category:nth-child(3) ul li:nth-child(5) { --i: 11; }
+.skill-category:nth-child(4) ul li:nth-child(1) { --i: 12; }
+.skill-category:nth-child(4) ul li:nth-child(2) { --i: 13; }
+.project-card:nth-child(1) { --i: 14; }
+.project-card:nth-child(2) { --i: 15; }
+.project-card:nth-child(3) { --i: 16; }
