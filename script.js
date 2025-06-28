@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Add scroll-triggered animations
 function animateOnScroll() {
-    const elements = document.querySelectorAll('.skill-category, .about-me, .contact');
+    const elements = document.querySelectorAll('.skill-category, .about-me, .contact, .project-card');
     
     elements.forEach(element => {
         const elementTop = element.getBoundingClientRect().top;
@@ -61,5 +61,3 @@ function createParticles() {
 
 // Initialize particles when page loads
 document.addEventListener('DOMContentLoaded', createParticles);
-
-
